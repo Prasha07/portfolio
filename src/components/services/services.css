@@ -1,0 +1,75 @@
+.services__container {
+    display: grid;
+    /* mtlb 3 col me kr do aur teeno article la do har col me  */
+    /* way to write grid-template-columns: 1fr 1fr 1fr */
+    grid-template-columns: repeat(3, 1fr);
+    /* har article k beech 3 rem ka gap hga  */
+    gap: 3rem;
+}
+.service {
+    background: var(--color-bg-variant);
+    border-radius: 0 0 2rem 2rem;
+    border: 1px solid var(--color-primary);
+    height: fit-content;
+    transition: var(--transition);
+}
+.service:hover {
+    background: transparent;
+    border-color: var(--color-primary-variant);
+    cursor: default;
+}
+.service__head{
+    background: var(--color-primary);
+    padding: 2rem;
+    border-radius: 0 0 2rem 2rem;
+    box-shadow: 0 2rem 1rem rgba(0,0,0,0.1);
+}
+.service__head h3 {
+    color: var(--color-bg);
+    font-size: 1rem;
+    text-align: center;
+}
+
+.service__list{
+    padding: 2rem;
+}
+
+.service__list li{
+    /* taki ab  correct ka sign aur usk aage ka content ek sth rhe ek row me */
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.service__list-icon{
+   color: var(--color-primary);
+   /* ------------can be changed original 2px tha */
+   margin-top: 4px;
+}
+
+.service__list p{
+    font-size: 0.9rem;
+}
+.service__list-image{
+    margin-bottom: 30px;
+}
+
+/* =========== MEDIA QUERIES (Medium devices)============ */
+@media screen and (max-width: 1024px) {
+    .services__container {
+        /* do article rhega ek sth aur unk beech ka gap 2 rem hga */
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+    /* taki height barabar rhe dono article ka jo ek sth h */
+    .service{
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+   .services__container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+   }
+}
